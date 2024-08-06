@@ -5,6 +5,7 @@ class JuegoMastermind:
         self.__colores_disponibles = ['rojo', 'azul', 'verde', 'amarillo', 'naranja', 'morado']
         self.__combinacion_secreta = [random.choice(self.__colores_disponibles) for _ in range(4)]
         self.__jugador1 = jugador1
+
     @property
     def colores_disponibles(self):
         return self.__colores_disponibles
