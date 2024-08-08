@@ -1,6 +1,6 @@
 import random
 
-class JuegoMastermind:
+class JuegoMastermindI:
     def __init__(self, jugador1: str) -> None:
         self.__colores_disponibles = ['rojo', 'azul', 'verde', 'amarillo', 'naranja', 'morado']
         self.__combinacion_secreta = [random.choice(self.__colores_disponibles) for _ in range(4)]
@@ -31,12 +31,9 @@ class JuegoMastermind:
                 resultado.append(f"🟢")
                 print(f"🟢 {conjetura[i]} está en la posición correcta")
                 correcto_color_posicion += 1
-            elif conjetura[i] in self.__combinacion_secreta:
-                resultado.append(f"🟠")
-                print(f"🟠 {conjetura[i]} está en la combinación pero en la posición incorrecta")
             else:
                 resultado.append(f"⚪")
-                print(f"⚪ {conjetura[i]} no está en la combinación")
+                print(f"⚪ {conjetura[i]} no está en la combinacion o no esta en la posicion correcta")
 
         print(f"Conjetura: [{', '.join(conjetura)}]")
         print(f"Resultado: [{', '.join(resultado)}]")
